@@ -31,8 +31,4 @@ class Customer
     result += "You earned #{frequent_renter_points} frequent renter points"
     result
   end
-
-  def amount_for(rental)
-    rental.charge
-  end
 end
