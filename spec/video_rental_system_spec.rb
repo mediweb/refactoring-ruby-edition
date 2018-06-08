@@ -5,7 +5,7 @@ require "video_rental_system"
 RSpec.describe Rental do
   it "sums the prices of its line items" do
     customer = Customer.new("Bob Slydel")
-    movie1 = Movie.new("Blade Runner", Movie::REGULAR)
+    movie1 = Movie.new("Blade Runner", RegularPrice.new)
     rental1 = Rental.new(movie1, 5)
     customer.add_rental(rental1)
 
@@ -15,7 +15,7 @@ RSpec.describe Rental do
                  "You earned 1 frequent renter points"
 
 
-    movie2 = Movie.new("The Matrix", Movie::CHILDRENS)
+    movie2 = Movie.new("The Matrix", ChildrensPrice.new)
     rental2 = Rental.new(movie2, 1)
     customer.add_rental(rental2)
 
@@ -26,7 +26,7 @@ RSpec.describe Rental do
                  "You earned 2 frequent renter points"
 
 
-    movie3 = Movie.new("Memento", Movie::NEW_RELEASE)
+    movie3 = Movie.new("Memento", NewReleasePrice.new)
     rental3 = Rental.new(movie3, 15)
     customer.add_rental(rental3)
 
